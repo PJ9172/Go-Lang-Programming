@@ -1,10 +1,19 @@
 package main
-import ("fmt")
-func main()  {
-	// fmt.Println("Hello pj...")
-	var p1 = "hello"
-	fmt.Println(p1)
-	// p1=105
-	// fmt.Println(p1)
 
+import "fmt"
+
+func main() {
+	// fmt.Println("Hello pj...")
+	// var s1 = "Prajwal"
+	// fmt.Printf("My name is : %s",s1)
+
+	// fmt.Print("Enter your age : ")
+	// var age int
+	// fmt.Scanf("%d",&age)
+	// fmt.Println("Your age is : ",age)
+
+	fmt.Print("Enter your full name : ")
+	var name string
+	fmt.Scanf("%s",&name)
+	fmt.Println("Your name is : ",name)
 }
