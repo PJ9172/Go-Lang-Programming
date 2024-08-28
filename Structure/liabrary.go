@@ -48,7 +48,7 @@ package main
 // 			l.Pages = page
 // 			l1 = append(l1, l)
 // 			fmt.Println("Book added successfully!!!")
-// 			fmt.Printf("Now Book records are : %v\n", l1)
+// 			fmt.Printf("Now Book records are : %+v\n", l1)
 // 		}
 // 	case 2:
 // 		fmt.Print("Enter the name of book to remove : ")
@@ -65,7 +65,7 @@ package main
 // 		if t == 0 {
 // 			fmt.Print(name, " book is doesn't exist!!!")
 // 		} else {
-// 			fmt.Println(name, "book is successfully removed & remaining books are :", l1)
+// 			fmt.Printf(name, "book is successfully removed & remaining books are : %+v\n", l1)
 // 		}
 // 	case 3:
 // 		fmt.Print("Enter the book name to search : ")
@@ -74,7 +74,7 @@ package main
 // 		t := 0
 // 		for _, value := range l1 {
 // 			if value.Title == name {
-// 				fmt.Print(name, " book is founded & the details are : ", value)
+// 				fmt.Printf(name, " book is founded & the details are : %+v\n", value)
 // 				t = 1
 // 			}
 // 		}
