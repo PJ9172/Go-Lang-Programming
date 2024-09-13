@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>
+</head>
+<style>
+    table {
+        margin-top: 50px;
+        /* border: 1px solid black; */
+        width: 60%;
+        font-size: 20px;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    h1 {
+        margin-top: 100px;
+    }
+</style>
+
+<body>
+    <center>
+        <h1>Student Data ! ! !</h1>
+        <table border="1px">
+            <tr>
+                <th>Name</th>
+                <td id="fullname"></td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td id="address"></td>
+            </tr>
+            <tr>
+                <th>Contact Number</th>
+                <td id="contactno"></td>
+            </tr>
+            <tr>
+                <th>Email-id</th>
+                <td id="email"></td>
+            </tr>
+            <tr>
+                <th>Date of Birth</th>
+                <td id="dob"></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td id="gender"></td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        var fullname = document.getElementById("fullname")
+        var address = document.getElementById("address")
+        var contactno = document.getElementById("contactno")
+        var email = document.getElementById("email")
+        var dob = document.getElementById("dob")
+        var gender = document.getElementById("gender")
+
+        var jsonData = {{.}};
+
+        fullname.innerText = jsonData.fullname
+        address.innerText = jsonData.address
+        contactno.innerText = jsonData.contactno
+        email.innerText = jsonData.email
+        dob.innerText = jsonData.dob
+        gender.innerText = jsonData.gender
+    </script>
+</body>
+
+</html>
