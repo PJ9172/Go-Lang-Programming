@@ -1,13 +1,10 @@
 package main
 
 import (
-	"bufio"
 	"crypto/md5"
 	"encoding/hex"
 	"fmt"
 	"net/http"
-	"os"
-	"strings"
 	"time"
 )
 
@@ -22,7 +19,7 @@ var urlDB = make(map[string]UrlStruct)
 
 func main() {
 
-	fmt.Print("Enter the url : ")
+	/*fmt.Print("Enter the url : ")
 	reader := bufio.NewReader(os.Stdin)
 	URL, err := reader.ReadString('\n')
 	if err != nil {
@@ -37,15 +34,18 @@ func main() {
 	// fmt.Println(shorturl)
 
 	newurl := "http://localhost:3000/urlshorter/" + shorturl
-	fmt.Println("\nSearch the following URL : ", newurl)
+	fmt.Println("\nSearch the following URL : ", newurl)*/
 
 	//Register the handler function to all request
 	http.HandleFunc("/", rootUrlHandler)
+	http.HandleFunc("/submit", shortUrl)
 	http.HandleFunc("/urlshorter/", redirectUrl)
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+
 
 	//Server starting on 3000 port
 	fmt.Println("Server starting on 3000 port!!!")
-	err = http.ListenAndServe(":3000", nil)
+	err := http.ListenAndServe(":3000", nil)
 	if err != nil {
 		fmt.Print("Error in server starting", err)
 		return
@@ -96,6 +96,18 @@ func redirectUrl(res http.ResponseWriter, req *http.Request) {
 	http.Redirect(res, req, urlstruct.OrignalUrl, http.StatusFound)
 }
 
-func rootUrlHandler(res http.ResponseWriter, req *http.Request) {
+func shortUrl(res http.ResponseWriter, req *http.Request) {
 	fmt.Fprintf(res, "Hello Prajwal...")
+	if req.Method == "POST" {
+		req.ParseForm()
+		URL := req.FormValue("URL")
+		shorturl := storeInStruct(URL)
+		newUrl := "http://localhost:3000/urlshorter/" + shorturl
+		fmt.Fprint(res, "Your URL is Successfully Shorted !!!\nSearch it : ", newUrl)
+		fmt.Println(newUrl)
+	}
+}
+
+func rootUrlHandler(res http.ResponseWriter, req *http.Request) {
+	http.ServeFile(res, req, "index.html")
 }
