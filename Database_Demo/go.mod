@@ -1,4 +1,4 @@
-module Practicing_Go
+module Database_Demo
 
 go 1.22.5
 
