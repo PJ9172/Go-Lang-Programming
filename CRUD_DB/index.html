@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Info</title>
+    <link rel="stylesheet" href="./static/index.css">
+</head>
+
+<body>
+    <center>
+        <div class="container">
+            <h1>Student Table</h1>
+            <table id="table">
+                <tr>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>Date Of Birth</th>
+                    <th>Email-Id</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </table>
+        </div>
+    </center>
+
+    <script>
+        // Embed JSON string data into a JavaScript variable
+        var studentJson = JSON.parse('{{.}}'); // Correctly parse JSON data
+        console.log(studentJson);
+
+        var table = document.getElementById("table");
+
+        // Populate table with student data
+        studentJson.map((ele, i) => {
+            var tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${ele.rollno}</td>
+                <td>${ele.name}</td>
+                <td>${ele.dob}</td>
+                <td>${ele.email}</td>
+                <td>
+                    <button class="blue" onclick="updateStudent(${ele.rollno})">Update</button>
+                </td>
+                <td>
+                    <button class="red" onclick="deleteStudent(${ele.rollno})">Delete</button>
+                </td>
+            `;
+            table.appendChild(tr);
+        });
+
+        //func for delete student 
+        function deleteStudent(rollNo) {
+            fetch(`/delete?rollno=${rollNo}`, { method: 'DELETE' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Student Record Deleted Successfully!!!")
+                        location.reload()
+                    } else {
+                        alert("Fail to Delete Student Record !!!")
+                    }
+                })
+        }
+
+        //func for update student
+        function updateStudent(rollno) {
+            console.log(rollno);
+            window.location.href = `/update?rollno=${rollno}`
+        }
+    </script>
+</body>
+
+</html>

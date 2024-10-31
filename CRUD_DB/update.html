@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+    <link rel="stylesheet" href="./static/update.css">
+</head>
+
+<body>
+    <center>
+        <div class="container">
+            <h1>Update Student Information</h1>
+            <form action="/updateStudent" method="POST">
+                <div class="r1">
+                    <input type="hidden" name="rollno" value="{{.RollNo}}">
+                    <label>Name:</label><input type="text" name="name" value="{{.Name}}"><br>
+                    <label>Date of Birth:</label><input type="text" name="dob" value="{{.DOB}}"><br>
+                    <label>Email:</label><input type="text" name="email" value="{{.Email}}"><br>
+                </div>
+                <div class="r2">
+                    <button type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+    </center>
+</body>
+
+</html>
