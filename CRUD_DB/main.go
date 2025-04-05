@@ -39,8 +39,8 @@ func main() {
 	http.HandleFunc("/updateStudent", updateStudent)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
-	fmt.Println("Server starts on Port 3000!!!")
-	err := http.ListenAndServe(":3000", nil)
+	fmt.Println("Server starts on Port 5000!!!")
+	err := http.ListenAndServe(":5000", nil)
 	if err != nil {
 		fmt.Println("Error to start server!!!", err)
 		return
