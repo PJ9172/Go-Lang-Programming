@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package hello;
 
-option go_package = "https://github.com/PJ9172/Go-Lang-Programming/gRPC/hello_gRPC/proto;hello";
+option go_package = "/;hello";
 
 service Greeter {
   rpc SayHello (HelloRequest) returns (HelloResponse);
