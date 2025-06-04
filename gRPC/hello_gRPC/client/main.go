@@ -5,32 +5,26 @@ import (
 	"log"
 	"time"
 
-	pb "github.com/PJ9172/Go-Lang-Programming/gRPC/hello_gRPC/proto"
+	pb "hello_gRPC/proto"
 
 	"google.golang.org/grpc"
 )
 
 func main() {
-	// Connect to the server
 	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure(), grpc.WithBlock())
 	if err != nil {
-		log.Fatalf("Could not connect: %v", err)
+		log.Fatalf("did not connect: %v", err)
 	}
 	defer conn.Close()
 
-	// Create a new client
-	client := pb.NewGreeterClient(conn)
+	c := pb.NewGreetServiceClient(conn)
 
-	// Prepare the request
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 
-	// Make the RPC call
-	response, err := client.SayHello(ctx, &pb.HelloRequest{Name: "Go Developer"})
+	r, err := c.SayHello(ctx, &pb.HelloRequest{Name: "Gopher"})
 	if err != nil {
-		log.Fatalf("Error calling SayHello: %v", err)
+		log.Fatalf("could not greet: %v", err)
 	}
-
-	// Print the response
-	log.Printf("Server says: %s", response.Message)
+	log.Printf("Greeting: %s", r.GetMessage())
 }

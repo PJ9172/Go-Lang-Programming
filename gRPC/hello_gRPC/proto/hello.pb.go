@@ -117,9 +117,9 @@ const file_hello_proto_rawDesc = "" +
 	"\fHelloRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\")\n" +
 	"\rHelloResponse\x12\x18\n" +
-	"\amessage\x18\x01 \x01(\tR\amessage2@\n" +
-	"\aGreeter\x125\n" +
-	"\bSayHello\x12\x13.hello.HelloRequest\x1a\x14.hello.HelloResponseB\tZ\a/;hellob\x06proto3"
+	"\amessage\x18\x01 \x01(\tR\amessage2E\n" +
+	"\fGreetService\x125\n" +
+	"\bSayHello\x12\x13.hello.HelloRequest\x1a\x14.hello.HelloResponseB\x0fZ\r/proto/;hellob\x06proto3"
 
 var (
 	file_hello_proto_rawDescOnce sync.Once
@@ -139,8 +139,8 @@ var file_hello_proto_goTypes = []any{
 	(*HelloResponse)(nil), // 1: hello.HelloResponse
 }
 var file_hello_proto_depIdxs = []int32{
-	0, // 0: hello.Greeter.SayHello:input_type -> hello.HelloRequest
-	1, // 1: hello.Greeter.SayHello:output_type -> hello.HelloResponse
+	0, // 0: hello.GreetService.SayHello:input_type -> hello.HelloRequest
+	1, // 1: hello.GreetService.SayHello:output_type -> hello.HelloResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
