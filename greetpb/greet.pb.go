@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v6.31.0
-// source: greet.proto
+// source: gRPC/greet/greet.proto
 
 package greetpb
 
@@ -31,7 +31,7 @@ type Greeting struct {
 
 func (x *Greeting) Reset() {
 	*x = Greeting{}
-	mi := &file_greet_proto_msgTypes[0]
+	mi := &file_gRPC_greet_greet_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43,7 +43,7 @@ func (x *Greeting) String() string {
 func (*Greeting) ProtoMessage() {}
 
 func (x *Greeting) ProtoReflect() protoreflect.Message {
-	mi := &file_greet_proto_msgTypes[0]
+	mi := &file_gRPC_greet_greet_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -56,7 +56,7 @@ func (x *Greeting) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Greeting.ProtoReflect.Descriptor instead.
 func (*Greeting) Descriptor() ([]byte, []int) {
-	return file_greet_proto_rawDescGZIP(), []int{0}
+	return file_gRPC_greet_greet_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Greeting) GetFirstName() string {
@@ -82,7 +82,7 @@ type GreetRequest struct {
 
 func (x *GreetRequest) Reset() {
 	*x = GreetRequest{}
-	mi := &file_greet_proto_msgTypes[1]
+	mi := &file_gRPC_greet_greet_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -94,7 +94,7 @@ func (x *GreetRequest) String() string {
 func (*GreetRequest) ProtoMessage() {}
 
 func (x *GreetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_greet_proto_msgTypes[1]
+	mi := &file_gRPC_greet_greet_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -107,7 +107,7 @@ func (x *GreetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GreetRequest.ProtoReflect.Descriptor instead.
 func (*GreetRequest) Descriptor() ([]byte, []int) {
-	return file_greet_proto_rawDescGZIP(), []int{1}
+	return file_gRPC_greet_greet_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GreetRequest) GetGreeting() *Greeting {
@@ -126,7 +126,7 @@ type GreetResponse struct {
 
 func (x *GreetResponse) Reset() {
 	*x = GreetResponse{}
-	mi := &file_greet_proto_msgTypes[2]
+	mi := &file_gRPC_greet_greet_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -138,7 +138,7 @@ func (x *GreetResponse) String() string {
 func (*GreetResponse) ProtoMessage() {}
 
 func (x *GreetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_greet_proto_msgTypes[2]
+	mi := &file_gRPC_greet_greet_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -151,7 +151,7 @@ func (x *GreetResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GreetResponse.ProtoReflect.Descriptor instead.
 func (*GreetResponse) Descriptor() ([]byte, []int) {
-	return file_greet_proto_rawDescGZIP(), []int{2}
+	return file_gRPC_greet_greet_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GreetResponse) GetResult() string {
@@ -161,11 +161,11 @@ func (x *GreetResponse) GetResult() string {
 	return ""
 }
 
-var File_greet_proto protoreflect.FileDescriptor
+var File_gRPC_greet_greet_proto protoreflect.FileDescriptor
 
-const file_greet_proto_rawDesc = "" +
+const file_gRPC_greet_greet_proto_rawDesc = "" +
 	"\n" +
-	"\vgreet.proto\x12\x05greet\"F\n" +
+	"\x16gRPC/greet/greet.proto\x12\x05greet\"F\n" +
 	"\bGreeting\x12\x1d\n" +
 	"\n" +
 	"first_name\x18\x01 \x01(\tR\tfirstName\x12\x1b\n" +
@@ -179,24 +179,24 @@ const file_greet_proto_rawDesc = "" +
 	"Z\b/greetpbb\x06proto3"
 
 var (
-	file_greet_proto_rawDescOnce sync.Once
-	file_greet_proto_rawDescData []byte
+	file_gRPC_greet_greet_proto_rawDescOnce sync.Once
+	file_gRPC_greet_greet_proto_rawDescData []byte
 )
 
-func file_greet_proto_rawDescGZIP() []byte {
-	file_greet_proto_rawDescOnce.Do(func() {
-		file_greet_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_greet_proto_rawDesc), len(file_greet_proto_rawDesc)))
+func file_gRPC_greet_greet_proto_rawDescGZIP() []byte {
+	file_gRPC_greet_greet_proto_rawDescOnce.Do(func() {
+		file_gRPC_greet_greet_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_gRPC_greet_greet_proto_rawDesc), len(file_gRPC_greet_greet_proto_rawDesc)))
 	})
-	return file_greet_proto_rawDescData
+	return file_gRPC_greet_greet_proto_rawDescData
 }
 
-var file_greet_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
-var file_greet_proto_goTypes = []any{
+var file_gRPC_greet_greet_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_gRPC_greet_greet_proto_goTypes = []any{
 	(*Greeting)(nil),      // 0: greet.Greeting
 	(*GreetRequest)(nil),  // 1: greet.GreetRequest
 	(*GreetResponse)(nil), // 2: greet.GreetResponse
 }
-var file_greet_proto_depIdxs = []int32{
+var file_gRPC_greet_greet_proto_depIdxs = []int32{
 	0, // 0: greet.GreetRequest.greeting:type_name -> greet.Greeting
 	1, // 1: greet.GreetService.Greet:input_type -> greet.GreetRequest
 	2, // 2: greet.GreetService.Greet:output_type -> greet.GreetResponse
@@ -207,26 +207,26 @@ var file_greet_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_greet_proto_init() }
-func file_greet_proto_init() {
-	if File_greet_proto != nil {
+func init() { file_gRPC_greet_greet_proto_init() }
+func file_gRPC_greet_greet_proto_init() {
+	if File_gRPC_greet_greet_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_greet_proto_rawDesc), len(file_greet_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_gRPC_greet_greet_proto_rawDesc), len(file_gRPC_greet_greet_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_greet_proto_goTypes,
-		DependencyIndexes: file_greet_proto_depIdxs,
-		MessageInfos:      file_greet_proto_msgTypes,
+		GoTypes:           file_gRPC_greet_greet_proto_goTypes,
+		DependencyIndexes: file_gRPC_greet_greet_proto_depIdxs,
+		MessageInfos:      file_gRPC_greet_greet_proto_msgTypes,
 	}.Build()
-	File_greet_proto = out.File
-	file_greet_proto_goTypes = nil
-	file_greet_proto_depIdxs = nil
+	File_gRPC_greet_greet_proto = out.File
+	file_gRPC_greet_greet_proto_goTypes = nil
+	file_gRPC_greet_greet_proto_depIdxs = nil
 }

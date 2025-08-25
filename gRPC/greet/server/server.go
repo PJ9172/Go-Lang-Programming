@@ -2,6 +2,7 @@ package main
 
 import (
 	"Unary_RPC/greetpb"
+	"context"
 	"fmt"
 	"log"
 	"net"
@@ -9,8 +10,15 @@ import (
 	"google.golang.org/grpc"
 )
 
-type server struct {
-	greetpb.UnimplementedGreetServiceServer
+type server struct {}
+
+func (*server) Greet(ctx context.Context, req *greetpb.GreetRequest) (*greetpb.GreetResponse, error){
+	firstName := req.GetGreeting().GetFirstName()
+	result := "Hello" + firstName
+	res := &greetpb.GreetResponse{
+		Result: result,
+	}
+	return res, nil
 }
 
 func main() {
